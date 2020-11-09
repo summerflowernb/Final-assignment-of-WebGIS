@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>北京市及周边地区购房建议网站</title>
+
+
+		<!-- 连接百度API -->
+		<script type="text/javascript" src="https://api.map.baidu.com/getscript?v=3.0&ak=xLUvCgHBUciN4c2AumkRwzXBugNZ3jyG"></script>
+		<script type="text/javascript" src="http://developer.baidu.com/map/custom/stylelist.js"></script>
+		<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+
+		<!--连接Jquery-->
+		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<!-- 连接CSS文件-->
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/model.css" />
+		<link rel="stylesheet" type="text/css" href="css/blank.css" />
+		<!-- 连接js文件 -->
+		<script type="text/javascript" src="js/method.js"></script>
+<!-- 		<script src="//bj.bcebos.com/v1/mapopen/api-demos/js/mapStyle.js"></script> -->
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body onload="init()">
+		<div id="topbox">
+			<div id="title1">北京市及周边地区购房建议网站 </div>
+			<div id="title2">@WebGIS</div>
+		</div>
+		<div id="scroll-button">
+			<!--设置下拉按钮-->
+
+			<img id="button1" src="img/arrow.gif" />
+
+			<!--同时这里需要一个巨大的占位符号-->
+		</div>
+		<!--放置-->
+
+
+		<div id="table">
+			<!--放置下拉列表 -->
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid" id="tabletitle">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="javascript:void(0)">显示住房优劣信息</a>
+					</div>
+				</div>
+				<ul class="nav navbar-nav">
+					<li class="dropdown" style="height: auto;">
+						<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+							选择区域
+							<b class="caret"></b>
+						</a>
+
+						<ul class="dropdown-menu" style="overflow-y: scroll;height: 400px;">
+							<li onclick="searchZone16()"><a href="javascript:void(0)">不限制</a></li>
+							<li class="divider"></li>
+							<li onclick="searchZone0()"><a href="javascript:void(0)">东城区</a></li>
+							<li class="divider"></li>
+							<li onclick="searchZone1()"><a href="javascript:void(0)">西城区</a></li>
+							<li class="divider"></li>
+							<li onclick="searchZone2()"><a href="javascript:void(0)">朝阳区</a></li>
+							<li class="divider"></li>
+							<li onclick="searchZone3()"><a href="javascript:void(0)">丰台区</a></li>
+							<li class="divider"></li>
+							<li onclick="searchZone4()"><a href="javascript:void(0)">石景山区</a></li>
+							<li class="divider"></li>
+							<li onclick="searchZone5()"><a href="javascript:void(0)">海淀区</a></li>
+							<li class="divider"></li>
+							<li onclick="searchZone6()"><a href="javascript:void(0)">门头沟区</a></li>
+							<li class="divider"></li>
+							<li onclick="searchZone7()"><a href="javascript:void(0)">房山区</a></li>
+							<li class="divider"></li>
+							<li onclick="searchZone8()"><a href="javascript:void(0)">通州区</a></li>
+							<li class="divider"></li>
+							<li onclick="searchZone9()"><a href="javascript:void(0)">顺义区</a></li>
+							<li class="divider"></li>
+							<li onclick="searchZone10()"><a href="javascript:void(0)">昌平区</a></li>
+							<li class="divider"></li>
+							<li onclick="searchZone11()"><a href="javascript:void(0)">大兴区</a></li>
+							<li class="divider"></li>
+							<li onclick="searchZone12()"><a href="javascript:void(0)">怀柔区</a></li>
+							<li class="divider"></li>
+							<li onclick="searchZone13()"><a href="javascript:void(0)">平谷区</a></li>
+							<li class="divider"></li>
+							<li onclick="searchZone14()"><a href="javascript:void(0)">密云区</a></li>
+							<li class="divider"></li>
+							<li onclick="searchZone15()"><a href="javascript:void(0)">延庆区</a></li>
+						</ul>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							房屋价格
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<li onclick="searchPrice6()"><a href="javascript:void(0)">不限制</a></li>
+							<li class="divider"></li>
+							<li onclick="searchPrice1()"><a href="javascript:void(0)">[0,15000]</a></li>
+							<li class="divider"></li>
+							<li onclick="searchPrice2()"><a href="javascript:void(0)">[15000,30000]</a></li>
+							<li class="divider"></li>
+							<li onclick="searchPrice3()"><a href="javascript:void(0)">[30000,60000]</a></li>
+							<li class="divider"></li>
+							<li onclick="searchPrice4()"><a href="javascript:void(0)">[60000,90000]</a></li>
+							<li class="divider"></li>
+							<li onclick="searchPrice5()"><a href="javascript:void(0)">90000以上</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							周边设施
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<li onclick="searchNearby1()"><a href="javascript:void(0)">医院</a></li>
+							<li class="divider"></li>
+							<li onclick="searchNearby2()"><a href="javascript:void(0)">地铁</a></li>
+							<li class="divider"></li>
+							<li onclick="searchNearby3()"><a href="javascript:void(0)">餐厅</a></li>
+							<li class="divider"></li>
+							<li onclick="searchNearby4()"><a href="javascript:void(0)">学校</a></li>
+							<li class="divider"></li>
+							<li onclick="searchNearby5()"><a href="javascript:void(0)">超市</a></li>
+						</ul>
+						
+					</li>
+				</ul>
+				
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							切换底图
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<li onclick="setCustomStyle1()"><a href="javascript:void(0)">默认底图</a></li>
+							<li class="divider"></li>
+							<li onclick="setCustomStyle2()"><a href="javascript:void(0)">道路图</a></li>
+							
+						</ul>
+						
+					</li>
+				</ul>
+				
+			</nav>
+		</div>
+		<div id="container" class="well well-lg">
+			<!--中心放置地图的位置-->
+			
+		</div>
+		
+		
+
+
+		<!-- 最下方的一个块，放上成员信息 -->
+		<div id="lastbox" >
+			<div></div>
+		</div>
+	</body>
+</html>
