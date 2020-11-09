@@ -1,0 +1,108 @@
+#container {
+	width: 90%;
+	height: 80%;
+	border: 1px solid black;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+#table {
+	width: 90%;
+	height: 10%;
+	margin: 0 auto;
+	padding: 0;
+}
+
+#topbox {
+	width: 100%;
+	height: 60px;
+	margin-top: 0px;
+	background-color: rgba(0, 0, 0, 0.2);
+	min-width: 1000px;
+}
+
+#title1 {
+	color: azure;
+	line-height: 60px;
+	font-size: 25px;
+	margin-left: 5%;
+	font-family: "黑体";
+	display: inline;
+	background-color: rgba(0, 0, 0, 0.05);
+
+}
+
+#title2 {
+	color: azure;
+	line-height: 60px;
+	font-size: 30px;
+	position: absolute;
+	right: 10px;
+	font-family: 'Times New Roman', Times, serif;
+	display: inline;
+
+}
+
+body {
+	background: url(../img/housebackground.jpg) no-repeat center center fixed;
+	/*兼容浏览器版本*/
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+}
+
+html {
+	height: 100%;
+	width: 100%;
+}
+
+#scroll-button {
+	width: 100%;
+	height: 95%;
+	position: relative;
+}
+
+#button1 {
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+
+}
+
+#tabletitle {
+	text-align: center;
+	float: left;
+}
+
+.navbar-nav {
+	display: inline;
+	float: left;
+}
+
+.divider {
+	display: inline-block;
+}
+
+#lastbox {
+	height: 20px;
+	width: 100%;
+}
+
+
+//去除百度地图logo水印
+.BMap_cpyCtrl {
+	display: none;
+}
+
+.anchorBL {
+	display: none;
+}
+
+
+
+
